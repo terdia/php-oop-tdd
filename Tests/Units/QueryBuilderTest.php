@@ -69,7 +69,8 @@ class QueryBuilderTest extends TestCase
     public function testItCanFindById()
     {
         $id = $this->insertIntoTable();
-        $result = $this->queryBuilder->select('*')->find($id);
+        $result = $this->queryBuilder->table('reports')
+            ->select('*')->find($id);
         self::assertNotNull($result);
         self::assertSame($id, $result->id);
         self::assertSame('Report Type 1', $result->report_type);
@@ -78,7 +79,8 @@ class QueryBuilderTest extends TestCase
     public function testItCanFindOneByGivenValue()
     {
         $id = $this->insertIntoTable();
-        $result = $this->queryBuilder->select('*')->findOneBy('report_type', 'Report Type 1');
+        $result = $this->queryBuilder->table('reports')
+            ->select('*')->findOneBy('report_type', 'Report Type 1');
         self::assertNotNull($result);
         self::assertSame($id, $result->id);
         self::assertSame('Report Type 1', $result->report_type);
