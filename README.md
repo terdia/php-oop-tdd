@@ -18,7 +18,7 @@ In this course you will:
 
     Learn test-driven development (TDD)
 
-    Learn how and why you should use dependency invasion principle and dependency injection
+    Learn how and why you should use dependency inversion principle and dependency injection
 
     Implement some common design patterns using PHP
 
